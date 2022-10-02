@@ -19,11 +19,12 @@ import static org.mockito.Mockito.*;
 
 @SpringBootTest
 public class ContactServiceTest {
-    @MockBean
-    ContactRepository contactRepository;
-    @Autowired
-    ContactService contactService;
-    
+
+  @MockBean
+  ContactRepository contactRepository;
+
+  @Autowired
+  ContactService contactService;
 
 
     @Test
@@ -37,7 +38,6 @@ public class ContactServiceTest {
         Contact contact = new Contact(100L,"Lipsa","Patra","lipsa@gmail.com","123456");
         when(contactRepository.findById(100L)).thenReturn(Optional.of(contact));
         assertEquals("lipsa@gmail.com",contactService.getContactById(100L).getEmail());
-
 
     }
     @Test

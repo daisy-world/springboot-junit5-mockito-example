@@ -29,7 +29,7 @@ public class ContactController {
     }
 
     @DeleteMapping("/contact")
-    public void deleteContactById(@RequestBody Contact contact){
+    public void deleteContact(@RequestBody Contact contact){
        contactService.deleteContact(contact);
     }
 
